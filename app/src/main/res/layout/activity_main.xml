@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--START [fixed variable interface]-->
+
+
+
+    <!--END [fixed variable interface]-->
+
+
+    <!--START [pace interface]-->
+    <TextView
+        android:theme="@style/AppTheme.TextView"
+        android:id="@+id/text_pace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pace"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top" />
+
+    <NumberPicker
+        android:theme="@style/AppTheme.Picker"
+        android:id="@+id/paceMin"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toBottomOf="@+id/text_pace" />
+
+    <NumberPicker
+        android:id="@+id/paceSec"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:theme="@style/AppTheme.Picker"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="@+id/paceMin" />
+    <!--END [pace interface]-->
+
+    <!--START [distance interface]-->
+    <TextView
+        android:id="@+id/text_dist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/dist"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintTop_toBottomOf="@+id/paceMin" />
+
+    <NumberPicker
+        android:id="@+id/distKM"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:theme="@style/AppTheme.Picker"
+        app:layout_constraintStart_toStartOf="@+id/paceMin"
+        app:layout_constraintTop_toBottomOf="@+id/text_dist" />
+
+    <NumberPicker
+        android:id="@+id/distM"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="8dp"
+        android:theme="@style/AppTheme.Picker"
+        app:layout_constraintStart_toEndOf="@+id/distKM"
+        app:layout_constraintTop_toTopOf="@+id/distKM" />
+    <!--END [distance interface]-->
+
+    <!--START [time interface]-->
+    <TextView
+        android:id="@+id/text_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/time"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintTop_toBottomOf="@+id/distKM" />
+
+    <NumberPicker
+        android:id="@+id/timeHour"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:theme="@style/AppTheme.Picker"
+        app:layout_constraintEnd_toStartOf="@+id/timeMin"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@+id/text_time" />
+
+    <NumberPicker
+        android:id="@+id/timeMin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:theme="@style/AppTheme.Picker"
+        app:layout_constraintEnd_toStartOf="@+id/timeSec"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/timeHour"
+        app:layout_constraintTop_toTopOf="@+id/timeHour" />
+
+    <NumberPicker
+        android:id="@+id/timeSec"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:theme="@style/AppTheme.Picker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/timeMin"
+        app:layout_constraintTop_toTopOf="@+id/timeHour" />
+    <!--END [time interface]-->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
